@@ -1,8 +1,8 @@
 {
 	"name": "vscode-yl-extension",
 	"displayName": "vscode-yl-extension",
-	"description": "",
-	"version": "0.0.1",
+	"description": "自己的前端插件",
+	"version": "0.0.3",
 	"engines": {
 		"vscode": "^1.66.0"
 	},
@@ -24,6 +24,10 @@
 			{
 				"language": "vue",
 				"path": "./snippets/vue.json"
+			},
+			{
+				"language": "vue",
+				"path": "./snippets/vue-third-party.json"
 			}
 		]
 	},
