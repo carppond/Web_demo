@@ -1,0 +1,42 @@
+{
+     "xvue": {
+          "prefix": "xvue",
+          "body": [
+               "<template>",
+               "\t<div>",
+               "",
+               "\t</div>",
+               "</template>",
+               "",
+               "<script>",
+               "\texport default {",
+               "\t\t// 组件名",
+               "\t\tname='',",
+               "\t\t// 子组件映射",
+               "\t\tcomponents: {},",
+               "\t\t// 父传子,数据接收",
+               "\t\tprops: {},",
+               "\t\t// 自定义属性",
+               "\t\tdata() {",
+               "\t\t\t\treturn {}",
+               "\t\t},",
+               "\t\t// 计算属性",
+               "\t\tcomputed: {},",
+               "\t\t// 侦听器",
+               "\t\twatch: {},",
+               "\t\t// 生命周期方法 - 初始化完成",
+               "\t\tcreated () {},",
+               "\t\t// 生命周期方法 - 挂载完成",
+               "\t\tmounted () {},",
+               "\t\t// 定义方法",
+               "\t\tmethods: {},",
+               "\t}",
+               "</script>",
+               "",
+               "<style lang=\"less\" scoped>",
+               "",
+               "</style>"
+          ],
+          "description": "vue 初始化模板"
+      }
+}
