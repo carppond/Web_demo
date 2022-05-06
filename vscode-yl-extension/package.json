@@ -2,7 +2,7 @@
 	"name": "vscode-yl-extension",
 	"displayName": "vscode-yl-extension",
 	"description": "自己的前端插件",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"engines": {
 		"vscode": "^1.66.0"
 	},

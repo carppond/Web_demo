@@ -14,26 +14,38 @@
       </van-nav-bar>
       <!-- 频道列表 -->
       <van-tabs class="channel_tab" v-model="active" animated swipeable>
-        <van-tab title="标签 1">内容 1</van-tab>
-        <van-tab title="标签 2">内容 2</van-tab>
-        <van-tab title="标签 3">内容 3</van-tab>
-        <van-tab title="标签 4">内容 4</van-tab>
+        <van-tab
+          v-for="obj in userChannels" :key="obj.id"
+          :title="obj.name"
+        >
+          <!-- 文章列表 -->
+          <ArticleList :channel="obj"></ArticleList>
+        </van-tab>
+        <div slot="nav-right" class="placeholder"></div>
+        <div slot="nav-right" class="hamburger-btn">
+          <i class="toutiao toutiao-gengduo"></i>
+        </div>
       </van-tabs>
     </div>
 </template>
 
 <script>
+import { getUserChannels } from '@/api/user'
+import ArticleList from './components/article-list.vue'
 export default {
   // 组件名
   name: 'HomeIndex',
   // 子组件映射
-  components: {},
+  components: {
+    ArticleList
+  },
   // 父传子,数据接收
   props: {},
   // 自定义属性
   data () {
     return {
-      active: 0
+      active: 0,
+      userChannels: []
     }
   },
   // 计算属性
@@ -41,11 +53,22 @@ export default {
   // 侦听器
   watch: {},
   // 生命周期方法 - 初始化完成
-  created () {},
+  created () {
+    this.loadChannels()
+  },
   // 生命周期方法 - 挂载完成
   mounted () {},
   // 定义方法
-  methods: {}
+  methods: {
+    async loadChannels () {
+      try {
+        const { data } = await getUserChannels()
+        this.userChannels = data.data.channels
+      } catch (error) {
+        console.log('获取数据是不', error)
+      }
+    }
+  }
 }
 </script>
 
@@ -86,6 +109,34 @@ export default {
       height: 6px ;
       background-color: #3296fa;
       bottom: 8px;
+    }
+    .placeholder {
+      width: 66px;
+      height: 82px;
+      flex-shrink: 0;
+    }
+    .hamburger-btn {
+      position: fixed;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 66px;
+      height: 82px;
+      background-color: #fff;
+      opacity: 0.9;
+      .toutiao {
+        font-size: 33px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 1px;
+        height: 100%;
+        background-image: url('~@/assets/gradient-gray-line.png');
+        background-size: contain;
+      }
     }
   }
 }
