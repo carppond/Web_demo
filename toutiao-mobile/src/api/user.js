@@ -15,3 +15,10 @@ export const getSmsCode = mobile => {
     url: `/v1_0/sms/codes/${mobile}`
   })
 }
+
+export const getUserInfo = () => {
+  return request({
+    method: 'GET',
+    url: '/v1_0/user'
+  })
+}

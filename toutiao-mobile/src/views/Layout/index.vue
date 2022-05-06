@@ -20,13 +20,15 @@
         </van-tabbar-item>
         <van-tabbar-item to="/my">
             <i slot="icon" class="toutiao toutiao-wode"></i>
-            <span class="text">我的</span>
+            <span class="text">{{ user ? '我的' : '未登录'}}</span>
         </van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
 
 <script>
+
+import { mapState } from 'vuex'
 export default {
   // 组件名
   name: 'LayoutIndex',
@@ -41,7 +43,9 @@ export default {
     }
   },
   // 计算属性
-  computed: {},
+  computed: {
+    ...mapState(['user'])
+  },
   // 侦听器
   watch: {},
   // 生命周期方法 - 初始化完成
