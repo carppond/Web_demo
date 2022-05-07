@@ -9,7 +9,11 @@
             error-text="请求失败，点击重新加载"
             @load="onLoad"
           >
-            <van-cell v-for="item in list" :key="item.art_id" :title="item.title" />
+            <!-- <van-cell v-for="item in list" :key="item.art_id" :title="item.title" /> -->
+            <ArticleItem
+              v-for="(obj, index) in list" :key="index"
+              :article="obj"
+            ></ArticleItem>
           </van-list>
        </van-pull-refresh>
      </div>
@@ -17,12 +21,14 @@
 
 <script>
 import { getArticles } from '@/api/articles'
-
+import ArticleItem from '@/component/article-item/index.vue'
 export default {
   // 组件名
   name: 'ArticleList',
   // 子组件映射
-  components: {},
+  components: {
+    ArticleItem
+  },
   // 父传子,数据接收
   props: {
     channel: {
@@ -104,5 +110,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+.article-list {
+  height: 79vh;
+  overflow-y: auto;
+}
 </style>
