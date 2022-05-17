@@ -1,0 +1,31 @@
+{
+     "xvue3": {
+          "prefix": "xvue3",
+          "body": [
+               "<template>",
+               "\t<div>",
+               "",
+               "\t</div>",
+               "</template>",
+               "",
+               "<script>",
+               "export default {",
+               "  // 组件名",
+               "  name: '',",
+               "  // 创建实例前",
+               "  setup () {}",
+               "  // 父传子,数据接收",
+               "  props: {},",
+               "  // 生命周期方法 - 挂载完成",
+               "  onMounted () {},",
+               "}",
+               "</script>",
+               "",
+               "<style lang=\"less\" scoped>",
+               "",
+               "</style>",
+               ""
+          ],
+          "description": "vue3.0 初始化模板"
+      }
+}
