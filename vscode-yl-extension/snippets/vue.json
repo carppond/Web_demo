@@ -46,5 +46,37 @@
                "redirect: '${1:path}'"
           ],
           "description": "vue redirect路由重定向"
+      },
+      "vue 3.0 初始化": {
+          "prefix": "x3vue",
+          "body": [
+               "<template>",
+               "\t<div>",
+               "",
+               "\t</div>",
+               "</template>",
+               "",
+               "<script>",
+               "export default {",
+               "  // 组件名",
+               "  name: '',",
+               "  // 创建实例前",
+               "  setup () {",
+               "    // 生命周期方法 - DOM渲染前",
+               "    onBeforeMount(() => {",
+               "    }),",
+               "    // 生命周期方法 - DOM渲染后",
+               "    onMounted(() => {",
+               "    }),",
+               "  },",
+               "}",
+               "</script>",
+               "",
+               "<style lang=\"less\" scoped>",
+               "",
+               "</style>",
+               ""
+          ],
+          "description": "vue3.0 初始化模板"
       }
 }
