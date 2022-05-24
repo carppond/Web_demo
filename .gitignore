@@ -3,6 +3,8 @@ node_modules
 /dist
 */node_modules
 */dist
+uni-shop/node_modules
+uni-shop/unpackage/dist
 
 # local env files
 .env.local
