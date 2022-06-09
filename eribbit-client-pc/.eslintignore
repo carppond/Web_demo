@@ -1,0 +1,3 @@
+# 针对以下文件不做校验
+/dist
+/src/vender
