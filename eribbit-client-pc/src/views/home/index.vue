@@ -1,8 +1,7 @@
 <template>
-  <div class="container">
-    <!-- 一级路由 -->
-    <router-view></router-view>
-    <!-- <RouterView></RouterView> -->
+  <div>
+    homeopage
+    <div class="container">11111111111</div>
   </div>
 </template>
 
@@ -10,7 +9,7 @@
 import { onBeforeMount, onMounted } from 'vue'
 export default {
   // 组件名
-  name: 'App',
+  name: 'HomePage',
   // 子组件映射
   components: {},
   // 父传子,数据接收
@@ -28,5 +27,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+.container {
+  .hoverShadow();
+  color: @xtxColor;
+}
 </style>
