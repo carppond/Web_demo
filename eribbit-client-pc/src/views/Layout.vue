@@ -1,9 +1,9 @@
 <template>
   <div>
     <!-- 顶部组件 -->
-    <nav>顶部组件</nav>
+    <AppNavbar></AppNavbar>
     <!-- 头部组件 -->
-    <header>头部组件</header>
+    <AppHeader></AppHeader>
     <!-- 内容容器 -->
     <div class="main">
       <!-- 二级路由 -->
@@ -16,11 +16,17 @@
 
 <script>
 import { onBeforeMount, onMounted } from 'vue'
+import AppNavbar from '@/components/app-navbar.vue'
+import AppHeader from '@/components/app-header.vue'
+
 export default {
   // 组件名
   name: 'LayoutPage',
   // 子组件映射
-  components: {},
+  components: {
+    AppNavbar,
+    AppHeader
+  },
   // 父传子,数据接收
   props: {},
   // 创建实例前

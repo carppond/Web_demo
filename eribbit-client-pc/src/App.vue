@@ -1,13 +1,11 @@
 <template>
-  <div class="container">
-    <!-- 一级路由 -->
-    <router-view></router-view>
-    <!-- <RouterView></RouterView> -->
-  </div>
+  <router-view></router-view>
 </template>
 
 <script>
 import { onBeforeMount, onMounted } from 'vue'
+import request from '@/utils/request'
+
 export default {
   // 组件名
   name: 'App',
@@ -23,6 +21,10 @@ export default {
     // 生命周期方法 - DOM渲染后
     onMounted(() => {
     })
+    const fn = () => {
+      request('/member/profile', 'get')
+    }
+    return { fn }
   }
 }
 </script>

@@ -1,38 +1,38 @@
 //  less 混入
 
-.abc {
-  width: 100px;
-  height: 100px;
-}
+// .abc {
+//   width: 100px;
+//   height: 100px;
+// }
 
-.box {
-  .abc()
-}
+// .box {
+//   .abc()
+// }
 
-.abc2() {
-  width: 100px;
-  height: 100px;
-}
+// .abc2() {
+//   width: 100px;
+//   height: 100px;
+// }
 
-.box2 {
-  .abc2();
-}
-
-
-.abc3(@width) {
-  width: @width;
-  height: @width;
-}
+// .box2 {
+//   .abc2();
+// }
 
 
-.box3 {
-  .abc3(100px);
-}
+// .abc3(@width) {
+//   width: @width;
+//   height: @width;
+// }
+
+
+// .box3 {
+//   .abc3(100px);
+// }
 // 鼠标经过阴影动画
 .hoverShadow() {
   transition: all .5s;
   &:hover {
-    transform: transition3d(3, -3px, 0);
+    transform: transition3d(0, -3px, 0);
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   }
 }

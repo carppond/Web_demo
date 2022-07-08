@@ -14,7 +14,7 @@ const instance = axios.create({
   baseURL,
   timeout: 5000
 })
-
+// 请求拦截器
 instance.interceptors.request.use((config) => {
   // 拦截业务逻辑
   // 进行请求配置的修改
@@ -29,7 +29,7 @@ instance.interceptors.request.use((config) => {
 }, err => {
   return Promise.reject(err)
 })
-
+// 响应拦截器
 instance.interceptors.response.use((res) => {
   return res.data
 }, err => {
