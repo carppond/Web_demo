@@ -53,6 +53,6 @@ export default {
 
 <style lang="less" scoped>
 .app-body {
-  min-height: 600px;
+  min-height: 2000px;
 }
 </style>

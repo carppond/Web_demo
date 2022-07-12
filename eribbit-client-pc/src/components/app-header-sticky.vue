@@ -1,7 +1,7 @@
 // 吸顶头部
 <template>
-  <div class="app-header-sticky">
-    <div class="container">
+  <div class="app-header-sticky" :class="{show: offsetY >= 78}">
+    <div class="container" v-show="offsetY >= 78">
       <router-link class="logo" to="/" />
       <AppHeaderNav/>
       <div class="right">
@@ -14,7 +14,7 @@
 
 <script>
 import AppHeaderNav from '@/components/app-header-nav.vue'
-
+import { onMounted, ref } from 'vue'
 export default {
   // 组件名
   name: 'AppHeaderSticky',
@@ -24,7 +24,15 @@ export default {
   props: {},
   // 创建实例前
   setup () {
-
+    // 获取偏移量
+    const offsetY = ref(0)
+    onMounted(() => {
+      window.onscroll = () => {
+        const scrollTop = document.documentElement.scrollTop
+        offsetY.value = scrollTop
+      }
+    })
+    return { offsetY }
   }
 }
 </script>
@@ -36,9 +44,17 @@ export default {
   top: 0;
   width: 100%;
   height: 80px;
-  z-index: 999;
+  z-index: 1000;
   background-color: #fff;
   border-bottom: 1px solid #eee;
+  // 滑动 78 显示
+  transform: translateY(-100%);
+  opacity: 0;
+  &.show {
+    transition: all 0.3s linear;
+    transform: none;
+    opacity: 1;
+  }
   .container {
     display: flex;
     align-items: center;

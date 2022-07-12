@@ -1,17 +1,26 @@
 <template>
-  <div>
-    homeopage
-    <div class="container">11111111111</div>
+  <div class="container">
+    <!-- 首页入口: 分类 + 广告 -->
+    <div class="home-entry">
+      <!-- 左侧分类 -->
+      <HomeCategory />
+      <!-- 轮播图 -->
+    </div>
+
   </div>
 </template>
 
 <script>
 import { onBeforeMount, onMounted } from 'vue'
+import HomeCategory from './components/home-category.vue'
+
 export default {
   // 组件名
   name: 'HomePage',
   // 子组件映射
-  components: {},
+  components: {
+    HomeCategory
+  },
   // 父传子,数据接收
   props: {},
   // 创建实例前

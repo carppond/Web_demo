@@ -89,6 +89,10 @@ export default {
 
 <style lang="less" scoped>
 .app-footer {
+  // position: fixed;
+  // left: 0;
+  // bottom: 0;
+  width: 100%;
   background-color: #f3f3f3;
   padding-top: 40px;
   overflow: hidden;
